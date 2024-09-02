@@ -144,7 +144,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
       });
 
       const ids = findIntersectingLayersWithRectangle(
-        layerIds,
+        layerIds!,
         layers,
         origin,
         current
