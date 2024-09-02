@@ -33,12 +33,12 @@ export const Text = ({
   id,
   selectionColor,
 }: TextProps) => {
-  const { x, y, width, height, fill, value } = layer;
+  const { x, y, width, height, fill, Value } = layer;
 
   const updateValue = useMutation(({ storage }, newValue: string) => {
     const liveLayers = storage.get("layers");
 
-    liveLayers.get(id)?.set("value", newValue);
+    liveLayers.get(id)?.set("Value", newValue);
   }, []);
 
   const handleContentChange = (e: ContentEditableEvent) => {
@@ -57,7 +57,7 @@ export const Text = ({
       }}
     >
       <ContentEditable
-        html={value || "Text"}
+        html={Value || "Text"}
         onChange={handleContentChange}
         className={cn(
           "h-full w-full flex items-center justify-center text-center drop-shadow-md outline-none",

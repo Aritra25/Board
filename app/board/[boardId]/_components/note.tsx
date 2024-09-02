@@ -33,11 +33,11 @@ export const Note = ({
   id,
   selectionColor,
 }: NoteProps) => {
-  const { x, y, width, height, fill, value } = layer;
+  const { x, y, width, height, fill, Value } = layer;
 
   const updateValue = useMutation(({ storage }, newValue: string) => {
     const liveLayers = storage.get("layers");
-    liveLayers.get(id)?.set("value", newValue);
+    liveLayers.get(id)?.set("Value", newValue);
   }, [id]);
 
   const handleContentChange = (e: ContentEditableEvent) => {
@@ -58,7 +58,7 @@ export const Note = ({
       className="shadow-md drop-shadow-xl"
     >
       <ContentEditable
-        html={value || "Text"}
+        html={Value || "Text"}
         onChange={handleContentChange}
         className={cn(
           "h-full w-full flex items-center justify-center text-center drop-shadow-md outline-none",

@@ -56,7 +56,7 @@ export type TextLayer = {
   width: number;
   fill: Color;
   // points: number[][];
-  value?: string;
+  Value?: string;
 };
 
 export type NoteLayer = {
@@ -67,7 +67,7 @@ export type NoteLayer = {
   width: number;
   fill: Color;
   // points: number[][];
-  value?: string;
+  Value?: string;
 };
 
 export type Point = {

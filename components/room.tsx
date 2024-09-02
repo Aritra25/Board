@@ -6,7 +6,7 @@ import {
   RoomProvider,
   ClientSideSuspense,
 } from "@liveblocks/react";
-import { client } from "@/liveblocks.config"; // Ensure this path is correct
+// import { client } from "@/liveblocks.config"; // Ensure this path is correct
 import { Loading } from "@/app/board/[boardId]/_components/loading";
 import { LiveList, LiveMap, LiveObject } from "@liveblocks/client";
 import { Layer } from "@/types/canvas";
