@@ -21,12 +21,12 @@ export const Participations = () => {
             src={info?.picture || ""}
             name={info?.name || "Unknown User"}
             fallback={info?.name?.[0] || "T"}
-            borderColor={connectionIdToColor(currentUser?.connectionId)}
+            borderColor={connectionIdToColor(connectionId)}
           />
         ))}
         {currentUser && (
           <UserAvatar
-          borderColor={connectionIdToColor(currentUser?.connectionId)}
+            borderColor={connectionIdToColor(currentUser.connectionId)}
             src={currentUser.info?.picture || ""}
             name={`${currentUser.info?.name || "You"} (You)`}
             fallback={currentUser.info?.name?.[0] || "Y"}
@@ -34,7 +34,10 @@ export const Participations = () => {
         )}
       </div>
       {hasMoreUsers && (
-        <UserAvatar name={`${users.length-MAX_SHOWN_USERS} more`} fallback={`+${users.length-MAX_SHOWN_USERS}`}/>
+        <UserAvatar
+          name={`${users.length - MAX_SHOWN_USERS} more`}
+          fallback={`+${users.length - MAX_SHOWN_USERS}`}
+        />
       )}
     </div>
   );
