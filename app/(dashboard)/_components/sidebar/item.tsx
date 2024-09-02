@@ -14,7 +14,8 @@ interface ItemProps {
 
 export const Item = ({ id, name, imageUrl }: ItemProps) => {
   const { organization } = useOrganization();
-  const { setActive } = useOrganizationList();
+  const { setActive = () => {} } = useOrganizationList();
+
 
   const isActive = organization?.id === id;
 
